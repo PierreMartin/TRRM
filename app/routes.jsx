@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import { fetchCoursesRequest } from './api';
-import { App, Home, About } from './pages';
+import App from './pages/App';
+import Home from './pages/Home';
+import About from './pages/About';
 
 
 export default (store) => {

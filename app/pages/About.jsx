@@ -1,35 +1,24 @@
 import React, { Component } from 'react';
-import Page from '../pages/Page';
-import AboutContainer from '../containers/About';
+import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
+
 
 class About extends Component {
-  getMetaData() {
-    return {
-      title: this.pageTitle(),
-      meta: this.pageMeta(),
-      link: this.pageLink()
-    };
-  }
-
-  pageTitle = () => {
-    return 'About | reactGo';
-  };
-
-  pageMeta = () => {
-    return [
-      { name: 'description', content: 'A reactGo example of life' }
-    ];
-  };
-
-  pageLink = () => {
-    return [];
-  };
+	getMetaData() {
+		return {
+			title: 'About | react stater',
+			meta: [{ name: 'description', content: 'react stater' }],
+			link: []
+		};
+	}
 
   render() {
     return (
-      <Page {...this.getMetaData()}>
-        <AboutContainer {...this.props} />
-      </Page>
+      <LayoutPage {...this.getMetaData()}>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
+      </LayoutPage>
     );
   }
 }

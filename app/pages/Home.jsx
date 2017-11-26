@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { typingCreateCourseAction, createCourseAction } from '../actions/courses';
-import Page from '../pages/Page';
+import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
 import EntryBox from '../components/EntryBox/EntryBox';
-import CoursesList from '../components/coursesList/coursesList';
+import CoursesList from '../components/CoursesList/CoursesList';
 import classNames from 'classnames/bind';
 import styles from '../css/components/vote';
 
@@ -48,7 +48,7 @@ class Home extends Component {
 		const { typingCreateCourseState, courses } = this.props;
 
     return (
-      <Page {...this.getMetaData()}>
+      <LayoutPage {...this.getMetaData()}>
 				<div className={cx('vote')}>
 					<h1>Hello, world!</h1>
 
@@ -62,7 +62,7 @@ class Home extends Component {
 					<CoursesList courses={courses} />
 
 				</div>
-      </Page>
+      </LayoutPage>
     );
   }
 }
