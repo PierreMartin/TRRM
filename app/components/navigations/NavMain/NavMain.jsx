@@ -8,8 +8,9 @@ const cx = classNames.bind(styles);
 const NavigationMain = () => {
 	return (
 		<nav role="navigation">
-			<Link to="/" activeClassName={cx('active')}>React Redux Starter</Link>
+			<Link to="/" activeClassName={cx('active')}>Home</Link>
 			<Link to="/about" activeClassName={cx('active')}>About</Link>
+			<Link to="/films" activeClassName={cx('active')}>Films</Link>
 		</nav>
 	);
 };

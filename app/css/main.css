@@ -1,6 +1,7 @@
 @import 'settings';
 @import 'common/layout';
 @import 'common/typography';
+@import 'common/colors';
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
@@ -17,6 +18,14 @@ body {
   height: 100%;
   font-weight: normal;
   font-smoothing: antialiased;
+}
+
+.navigation a {
+    padding: 0 8px;
+}
+
+.active {
+  color: var(--colorDodgerBlue);
 }
 
 
