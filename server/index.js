@@ -13,7 +13,7 @@ const app = express();
 connect();
 
 // passport configuration
-initPassport();
+/* initPassport(); */
 
 if (isDebug) {
   // enable webpack hot module replacement

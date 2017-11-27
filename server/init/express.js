@@ -7,7 +7,6 @@ import flash from 'express-flash';
 import methodOverride from 'method-override';
 import gzip from 'compression';
 import helmet from 'helmet';
-import unsupportedMessage from '../db/unsupportedMessage';
 import { sessionSecret } from '../../config/secrets';
 import { ENV } from '../../config/env';
 import { session as dbSession } from '../db';
@@ -54,7 +53,7 @@ export default (app) => {
   //                  However, it requires an https-enabled website, i.e., HTTPS is necessary for secure cookies.
   let sessionStore = null;
   if (!dbSession) {
-    console.warn(unsupportedMessage('session'));
+    console.warn('session');
   } else {
     sessionStore = dbSession();
   }
