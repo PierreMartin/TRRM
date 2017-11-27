@@ -12,7 +12,7 @@ const Mangas = () => {
 
 	return (
 		<LayoutPage {...getMetaData()}>
-			<p>Mangas ...</p>
+			<h4>Mangas ...</h4>
 		</LayoutPage>
 	);
 };

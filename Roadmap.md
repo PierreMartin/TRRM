@@ -1,3 +1,2 @@
 - Mettre SASS
 - Mettre linter
-- bootstrap.css

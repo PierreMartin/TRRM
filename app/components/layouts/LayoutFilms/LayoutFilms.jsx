@@ -14,8 +14,16 @@ const LayoutFilms = ({ children }) => {
 
 	return (
 		<LayoutPage {...getMetaData()}>
-			<FilmsNavigation />
-			{children || <p>Click on a link for display the list</p>}
+			<div className="row">
+				<div className="col-sm-2">
+					<FilmsNavigation />
+				</div>
+				<div className="col-sm-10 card">
+					<div className="card-body">
+						{children || <p>Click on a link for display the list</p>}
+					</div>
+				</div>
+			</div>
 		</LayoutPage>
 	);
 };
