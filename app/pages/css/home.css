@@ -1,0 +1,6 @@
+@import '../../css/common/colors';
+
+.title-home {
+    text-align: center;
+    color: var(--colorLimedSpruce);
+}

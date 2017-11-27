@@ -6,7 +6,7 @@ import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
 import EntryBox from '../components/EntryBox/EntryBox';
 import CoursesList from '../components/CoursesList/CoursesList';
 import classNames from 'classnames/bind';
-import styles from '../css/components/vote';
+import styles from './css/home.css';
 
 const cx = classNames.bind(styles);
 
@@ -49,8 +49,8 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.getMetaData()}>
-				<div className={cx('vote')}>
-					<h1>Hello, world!</h1>
+				<div>
+					<h1 className={cx('title-home')}>Hello, world!</h1>
 
 					<EntryBox
 						placeholder="Write something here"

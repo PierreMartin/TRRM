@@ -1,4 +1,3 @@
 - Mettre SASS
 - Mettre linter
-- refacto fichier css
-- faire sub nav
+- bootstrap.css
