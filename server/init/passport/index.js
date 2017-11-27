@@ -1,4 +1,3 @@
-/* Initializing passport.js */
 import passport from 'passport';
 import local from './local';
 import google from './google';
