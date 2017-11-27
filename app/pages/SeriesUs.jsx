@@ -12,7 +12,7 @@ const SeriesUs = () => {
 
 	return (
 		<LayoutPage {...getMetaData()}>
-			<p>SeriesUs</p>
+			<p>Serie Us ...</p>
 		</LayoutPage>
 	);
 };

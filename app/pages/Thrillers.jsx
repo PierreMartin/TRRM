@@ -12,7 +12,7 @@ const Thrillers = () => {
 
 	return (
 		<LayoutPage {...getMetaData()}>
-			<p>Thrillers</p>
+			<p>Thrillers ...</p>
 		</LayoutPage>
 	);
 };
