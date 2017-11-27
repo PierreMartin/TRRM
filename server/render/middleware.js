@@ -2,7 +2,7 @@ import { createMemoryHistory, match } from 'react-router';
 import createRoutes from '../../app/routes';
 import configureStore from '../../app/store/configureStore';
 import pageRenderer from './pageRenderer';
-import fetchDataForRoute from '../../app/utils/fetchDataForRoute';
+import fetchDataForRoute from '../../app/middlewares/fetchDataForRoute';
 
 
 export default function render(req, res) {

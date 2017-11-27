@@ -5,7 +5,7 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import createRoutes from './routes';
 import configureStore from './store/configureStore';
-import fetchDataForRoute from './utils/fetchDataForRoute';
+import fetchDataForRoute from './middlewares/fetchDataForRoute';
 
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState, browserHistory);
