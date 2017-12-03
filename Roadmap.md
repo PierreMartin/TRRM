@@ -1,4 +1,4 @@
 - Mettre SASS
 - Mettre linter
 - remove passports 
-- créer les Modles + controller
+- créer loader

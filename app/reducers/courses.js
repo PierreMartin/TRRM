@@ -4,11 +4,7 @@ import * as types from './../types';
 const addCourse = (state = {}, action) => {
 	switch (action.type) {
 		case types.CREATE_COURSE_SUCCESS:
-			return {
-				id: action.id,
-				count: action.count,
-				text: action.text
-			};
+			return action.data;
 		default:
 			return state;
 	}

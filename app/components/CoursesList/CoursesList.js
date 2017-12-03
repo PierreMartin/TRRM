@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CoursesList = ({ courses }) => {
-	let coursesNode = '';
+	let coursesNode = 'no yet courses';
 	if (courses.length > 0) {
 		coursesNode = courses.map((course, key) => {
 			return (

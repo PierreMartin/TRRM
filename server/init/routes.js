@@ -2,9 +2,17 @@ import passport from 'passport';
 import { controllers, passport as passportConfig } from '../db';
 
 const usersController = controllers && controllers.users;
-const topicsController = controllers && controllers.topics;
+const coursesController = controllers && controllers.courses;
 
 export default (app) => {
+	// courses routes
+	if (coursesController) {
+		app.get('/api/getcourses', coursesController.all);
+		app.post('/api/addcourse/:id', coursesController.add);
+	} else {
+		console.warn('courses routes');
+	}
+
   // user routes
   if (usersController) {
     app.post('/sessions', usersController.login);
@@ -32,13 +40,5 @@ export default (app) => {
   }
   */
 
-  // topic routes
-  if (topicsController) {
-    app.get('/topic', topicsController.all);
-    app.post('/topic/:id', topicsController.add);
-    app.put('/topic/:id', topicsController.update);
-    app.delete('/topic/:id', topicsController.remove);
-  } else {
-    console.warn('topics routes');
-  }
+
 };

@@ -10,12 +10,11 @@ export function typingCreateCourseAction(text) {
 	};
 }
 
-export function createCourseSuccess(data) {
+export function createCourseSuccess(res) {
 	return {
 		type: types.CREATE_COURSE_SUCCESS,
-		id: data.id,
-		count: data.count,
-		text: data.text
+		message : res.message,
+		data: res.course
 	};
 }
 
@@ -27,12 +26,12 @@ export function createCourseFailure(data) {
 	};
 }
 
-export function createCourseAction(text) {
+export function createCourseAction(title) {
 	return (dispatch/*, getState*/) => {
-		if (text.trim().length <= 0) return;
+		if (title.trim().length <= 0) return;
 
 		const id = new Date().getTime();
-		const data = {count: 0, id, text};
+		const data = {id, title};
 
 		createCourseRequest(data)
 			.then((res) => {

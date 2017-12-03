@@ -8,11 +8,13 @@ export function login(req, res, next) {
   // Do email and password validation for the server
   passport.authenticate('local', (authErr, user, info) => {
     if (authErr) return next(authErr);
+
+		// unauthorized error (if wrong password or wrong login) :
     if (!user) {
       return res.sendStatus(401);
     }
-    // Passport exposes a login() function on req (also aliased as
-    // logIn()) that can be used to establish a login session
+
+		// login user :
     return req.logIn(user, (loginErr) => {
       if (loginErr) return res.sendStatus(401);
       return res.sendStatus(200);
@@ -30,7 +32,6 @@ export function logout(req, res) {
 
 /**
  * POST /signup
- * Create a new local account
  */
 export function signUp(req, res, next) {
   const user = new User({
@@ -39,12 +40,16 @@ export function signUp(req, res, next) {
   });
 
   User.findOne({ email: req.body.email }, (findErr, existingUser) => {
+		// conflict errors :
     if (existingUser) {
       return res.sendStatus(409);
     }
 
+		// create count :
     return user.save((saveErr) => {
       if (saveErr) return next(saveErr);
+
+			// login user :
       return req.logIn(user, (loginErr) => {
         if (loginErr) return res.sendStatus(401);
         return res.sendStatus(200);

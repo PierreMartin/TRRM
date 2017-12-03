@@ -11,7 +11,7 @@ export const fetchCoursesRequest = (params, store) => {
 			}
 		})
 		.catch(() => {
-			store.dispatch({type: types.GET_COURSES_FAILURE, message: 'No back-end yet', data: courses}); // no needed 'data' in real world
+			store.dispatch({type: types.GET_COURSES_FAILURE, message: 'error', data: courses}); // if not back-end, get the data from a JSON for this example
 		});
 };
 

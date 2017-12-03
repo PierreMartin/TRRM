@@ -1,16 +1,5 @@
-/**
- * Defining a User Model in mongoose
- * Code modified from https://github.com/sahat/hackathon-starter
- */
-
 import bcrypt from 'bcrypt-nodejs';
 import mongoose from 'mongoose';
-
-// Other oauthtypes to be added
-
-/*
- User Schema
- */
 
 const UserSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
@@ -41,7 +30,7 @@ function encryptPassword(next) {
   });
 }
 
-/**
+/*
  * Password hash middleware.
  */
 UserSchema.pre('save', encryptPassword);
@@ -57,10 +46,6 @@ UserSchema.methods = {
     });
   }
 };
-
-/**
- * Statics
- */
 
 UserSchema.statics = {};
 
