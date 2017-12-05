@@ -1,11 +1,3 @@
-/*
- * process.env.NODE_ENV - used to determine whether we generate a production or development bundle
- *
- * webpack --env.browser - used to determine whether to generate a browser or server bundle
- *
- * NOTE: browser/server is client/server-side rendering respectively in universal/isomorphic javascript
- *
- */
 const PATHS = require('./paths');
 const rules = require('./rules');
 const plugins = require('./plugins');
@@ -46,7 +38,7 @@ module.exports = (env = {}) => {
     output: {
       path: PATHS.assets,
       filename: '[chunkhash].js',
-      chunkFilename: '[name].[chunkhash:6].js', // for code splitting. will work without but useful to set
+      chunkFilename: '[name].[chunkhash:6].js',
       publicPath: PATHS.public
     },
     module: { rules: rules({ production: true, browser: true }) },

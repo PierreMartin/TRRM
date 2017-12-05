@@ -5,4 +5,3 @@ const externalModules = fs.readdirSync('node_modules')
   .reduce((acc, cur) => Object.assign(acc, { [cur]: 'commonjs ' + cur }), {});
 
 module.exports = externalModules;
-

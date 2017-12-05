@@ -10,7 +10,7 @@ import SeriesUs from './pages/SeriesUs';
 import Mangas from './pages/Mangas';
 
 
-export default (store) => {
+export default (/*store*/) => {
   /*
   const requireAuth = (nextState, replace, callback) => {
     const { user: { authenticated }} = store.getState();

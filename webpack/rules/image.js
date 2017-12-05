@@ -6,4 +6,3 @@ module.exports = ({ limit = 10000 } = {}) => ({
   options: { name: '[hash].[ext]', limit },
   include: PATHS.app
 });
-

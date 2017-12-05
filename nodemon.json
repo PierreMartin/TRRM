@@ -1,7 +1,7 @@
 {
     "verbose": false,
     "watch": [
-      "app/utils",
+      "app/middlewares",
       "app/routes.jsx",
       "server",
       "webpack"
