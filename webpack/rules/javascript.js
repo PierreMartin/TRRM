@@ -14,13 +14,29 @@ module.exports = ({ production = false, browser = false } = {}) => {
       'transform-react-inline-elements'
   ]: [];
 
-  return {
-    test: /\.js$|\.jsx$/,
-    loader: 'babel-loader',
-    options: {
-      presets,
-      plugins
-    },
-    exclude: PATHS.modules
-  };
+	let modules = [
+		{
+			loader: 'babel-loader',
+			options: {
+				presets,
+				plugins
+			}
+		}
+	];
+
+	if (enableHotModuleReplacement) {
+		modules.push({
+			// enforce: "pre", // only webpack 3
+			loader: "eslint-loader",
+			options: {
+				emitWarning: true
+			}
+		})
+	}
+
+	return {
+		test: /\.js$|\.jsx$/,
+		use: modules,
+		exclude: PATHS.modules
+	};
 };
