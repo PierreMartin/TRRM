@@ -6,7 +6,7 @@ import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
 import EntryBox from '../components/EntryBox/EntryBox';
 import CoursesList from '../components/CoursesList/CoursesList';
 import classNames from 'classnames/bind';
-import styles from './css/home.css';
+import styles from './css/home.scss';
 
 const cx = classNames.bind(styles);
 

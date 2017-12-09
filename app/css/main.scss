@@ -1,7 +1,5 @@
-@import 'settings';
-@import 'common/typography';
-@import 'common/colors';
-
+@import 'common/typography.scss';
+@import 'common/colors.scss';
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
@@ -9,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: var(--fontMontserrat);
+  font-family: $fontMontserrat;
 }
 
 .app {
@@ -24,17 +22,5 @@ body {
 }
 
 .active {
-  color: var(--colorCrimson);
+  color: $colorCrimson;
 }
-
-
-/* Add your global styles below... */
-
-/* ex:
-
-:global {
-  & .red { color: red; }
-  & .blue { color: blue; }
-}
-
-*/

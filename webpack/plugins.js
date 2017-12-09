@@ -34,10 +34,7 @@ module.exports = ({ production = false, browser = false } = {}) => {
     return [
       new webpack.EnvironmentPlugin(['NODE_ENV']),
       new webpack.DefinePlugin(compileTimeConstantForMinification),
-      new ExtractTextPlugin({
-        filename: '[contenthash].css',
-        allChunks: true
-      }),
+      new ExtractTextPlugin({filename: '[contenthash].css', allChunks: true}),
       new webpack.optimize.UglifyJsPlugin({ compress }),
       new ManifestPlugin({
         fileName: 'manifest.json'

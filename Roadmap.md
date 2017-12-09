@@ -1,4 +1,3 @@
-- Mettre SASS
 - remove passports 
 - créer loader
 - react 16

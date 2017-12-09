@@ -1,0 +1,19 @@
+@import '../../../css/common/typography.scss';
+@import '../../../css/common/input.scss';
+
+.entrybox {
+  width: 100%;
+  margin-bottom: 72px;
+}
+
+.header {
+  @include fontHeading();
+  text-align: center;
+}
+
+.input {
+  @include fontNormal();
+  @include input();
+  text-align: center;
+  outline: none;
+}

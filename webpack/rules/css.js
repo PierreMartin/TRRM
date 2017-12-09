@@ -6,10 +6,6 @@ const postcssReporter = require('postcss-reporter');
 const PATHS = require('../paths');
 
 module.exports = ({ production = false, browser = false } = {}) => {
-  /*
-   * modules: boolean - Enable/Disable CSS Modules
-   * importLoaders: number - Number of loaders applied before CSS loader
-   */
   const localIdentName = 'localIdentName=[name]__[local]___[hash:base64:5]';
 
   const createCssLoaders = embedCssInBundle => ([
@@ -35,14 +31,15 @@ module.exports = ({ production = false, browser = false } = {}) => {
     }
   ]);
 
+	// client side :
   const createBrowserLoaders = extractCssToFile => loaders => {
+    // if production :
     if (extractCssToFile) {
-      return ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: loaders
-      });
+      return ExtractTextPlugin.extract({fallback: 'style-loader', use: loaders});
     }
-    return [{ loader: 'style-loader' }, ...loaders];
+
+		// if dev :
+    return [{ loader: 'style-loader' }, ...loaders]; // loaded at right 1st to left last
   };
 
   const serverLoaders = createCssLoaders(false);
