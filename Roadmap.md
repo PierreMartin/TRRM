@@ -1,3 +1,6 @@
 - remove passports 
-- créer loader
 - react 16
+- linter
+- react.semantic-ui (enlever Bootstrap)
+- enlever Mocha -> mettre Jest
+- nettoyage node modules
