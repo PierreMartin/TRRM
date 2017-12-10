@@ -1,5 +1,6 @@
 import React from 'react';
 import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
+import { Container, Header, Segment } from 'semantic-ui-react';
 
 const About = () => {
 	function getMetaData() {
@@ -12,10 +13,14 @@ const About = () => {
 
 	return (
 		<LayoutPage {...getMetaData()}>
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, doloribus non perferendis provident quaerat quod reprehenderit similique totam. Amet beatae esse eveniet ex facere, fugiat magnam minus nesciunt qui quisquam!</h2>
+			<Segment textAlign='center' vertical>
+				<Container text>
+					<Header as='h2' content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aperiam commodi, dolore dolorum ducimus ea, eius explicabo hic laudantium molestiae officiis, porro quidem quod repellendus sunt tempora totam voluptate!' />
+					<Header as='h2' content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aperiam commodi, dolore dolorum ducimus ea, eius explicabo hic laudantium molestiae officiis, porro quidem quod repellendus sunt tempora totam voluptate!' />
+					<Header as='h2' content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aperiam commodi, dolore dolorum ducimus ea, eius explicabo hic laudantium molestiae officiis, porro quidem quod repellendus sunt tempora totam voluptate!' />
+					<Header as='h2' content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aperiam commodi, dolore dolorum ducimus ea, eius explicabo hic laudantium molestiae officiis, porro quidem quod repellendus sunt tempora totam voluptate!' />
+				</Container>
+			</Segment>
 		</LayoutPage>
 	);
 };

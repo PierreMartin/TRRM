@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Button, Container, Header, Icon, Segment } from 'semantic-ui-react';
 import { typingCreateCourseAction, createCourseAction } from '../actions/courses';
 import LayoutPage from '../components/layouts/LayoutPage/LayoutPage';
 import EntryBox from '../components/EntryBox/EntryBox';
@@ -49,19 +50,31 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.getMetaData()}>
-				<div>
-					<h1 className={cx('title-home')}>Hello, world!</h1>
+				<Segment inverted textAlign='center' style={{ minHeight: 400, padding: '1em 0em' }} vertical>
+					<Container text>
+						<Header as='h1' content='Hello, world!' inverted className={cx('myClass')} style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '1em' }}/>
+						<Header as='h2' content='Do whatever you want when you want to.' inverted style={{ fontSize: '1.7em', fontWeight: 'normal' }}/>
+						<Button primary size='huge'>Get Started<Icon name='right arrow' /></Button>
+					</Container>
+				</Segment>
 
-					<EntryBox
-						placeholder="Write something here"
-						handleChangeMessage={this.handleChangeMessage}
-						handleSubmitMessage={this.handleSubmitMessage}
-						value={typingCreateCourseState}
-					/>
+				<Segment textAlign='center' vertical>
+					<Container text>
+						<EntryBox
+							placeholder="Write something here"
+							handleChangeMessage={this.handleChangeMessage}
+							handleSubmitMessage={this.handleSubmitMessage}
+							value={typingCreateCourseState}
+						/>
+					</Container>
+				</Segment>
 
-					<CoursesList courses={courses} />
+				<Segment vertical>
+					<Container text>
+						<CoursesList courses={courses} />
+					</Container>
+				</Segment>
 
-				</div>
       </LayoutPage>
     );
   }

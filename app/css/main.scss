@@ -9,18 +9,3 @@ body {
   margin: 0;
   font-family: $fontMontserrat;
 }
-
-.app {
-  padding-top: 8px;
-  height: 100%;
-  font-weight: normal;
-  font-smoothing: antialiased;
-}
-
-.navigation a {
-    padding: 0 8px;
-}
-
-.active {
-  color: $colorCrimson;
-}

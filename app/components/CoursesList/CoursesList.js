@@ -1,16 +1,24 @@
 import React from 'react';
+import { Button, Icon, Item } from 'semantic-ui-react';
+import itemImage from '../../images/image.png';
 
 const CoursesList = ({ courses }) => {
 	let coursesNode = 'no yet courses';
 	if (courses.length > 0) {
 		coursesNode = courses.map((course, key) => {
 			return (
-				<li key={key}>
-					<div><strong>Title: {course.title}</strong></div>
-					<div>Description: {course.description}</div>
-					<div>Price: {course.price}</div>
-					<hr />
-				</li>
+				<Item key={key} style={{ marginBottom: '40px' }}>
+					<Item.Image size='small' src={itemImage} />
+
+					<Item.Content>
+						<Item.Header as='a' style={{ fontSize: '1.4em' }}>{course.title}</Item.Header>
+						<Item.Meta><span className='price'>${course.price} </span><span className='stay'>1 Month</span></Item.Meta>
+						<Item.Description>{course.description} - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores, exercitationem expedita fuga ipsum, molestias mollitia nam natus nisi nobis ...</Item.Description>
+						<Item.Extra><Icon color='green' name='check' /> 121 Votes</Item.Extra>
+
+						<Button basic color='red' content='Buy' icon='shopping cart' label={{ as: 'a', basic: true, color: 'red', pointing: 'left', content: `${course.price} $` }} />
+					</Item.Content>
+				</Item>
 			);
 		});
 	}
@@ -18,11 +26,9 @@ const CoursesList = ({ courses }) => {
 	return (
 		<div>
 			<h3>List of courses :</h3>
-
-			<ul>
+			<Item.Group>
 				{coursesNode}
-			</ul>
-
+			</Item.Group>
 		</div>
 	);
 };

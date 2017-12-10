@@ -24,7 +24,7 @@ const linkAssets = () => {
     { rel: 'icon', href: favicon },
     { rel: 'icon', sizes: '192x192', href: chromeFavicon },
     { rel: 'apple-touch-icon', sizes: '152x152', href: appleFavicon },
-    { rel: 'stylesheet',  href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' }
+    { rel: 'stylesheet',  href: '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css' }
   ];
 
   return links;
