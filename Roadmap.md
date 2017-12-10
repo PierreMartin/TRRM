@@ -2,3 +2,4 @@
 - linter
 - enlever Mocha -> mettre Jest
 - nettoyage node modules
+- implementer passportjs
