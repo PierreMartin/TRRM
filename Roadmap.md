@@ -1,4 +1,3 @@
-- react 16
 - linter
 - enlever Mocha -> mettre Jest
 - nettoyage node modules
