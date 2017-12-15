@@ -1,2 +1,1 @@
-- nettoyage node modules => expect, jsdom, sinon, mocha
 - implementer passportjs
