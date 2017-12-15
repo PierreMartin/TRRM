@@ -1,3 +1,2 @@
-- enlever Mocha -> mettre Jest
-- nettoyage node modules
+- nettoyage node modules => expect, jsdom, sinon, mocha
 - implementer passportjs
