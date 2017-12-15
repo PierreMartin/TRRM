@@ -13,7 +13,7 @@ export function typingCreateCourseAction(text) {
 export function createCourseSuccess(res) {
 	return {
 		type: types.CREATE_COURSE_SUCCESS,
-		message : res.message,
+		message: res.message,
 		data: res.course
 	};
 }

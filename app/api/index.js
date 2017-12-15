@@ -15,8 +15,8 @@ export const fetchCoursesRequest = (params, store) => {
 		});
 };
 
-export const fetchCourseRequest = (id) => {
-	return api().getCourseById(id)
+export const fetchCourseRequest = (params, store) => {
+	return api().getCourseById(params.id)
 		.then((res) => {
 			if (res.status === 200) {
 				store.dispatch({type: types.GET_COURSE_SUCCESS, data: res.data});
@@ -38,7 +38,7 @@ export const createCourseRequest = (data) => {
 };
 
 /********************************************** Third API ***********************************************/
-export const getFilmsRequest = () => {
+export const getFilmsRequest = (/*params, store*/) => {
 	return api().getFilms()
 		.then((res) => {
 			if (res.status === 200) {

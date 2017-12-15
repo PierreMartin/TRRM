@@ -42,7 +42,7 @@ export default (/*store*/) => {
       <Route path="films" component={LayoutFilms} >
         {/* <IndexRoute component={Thrillers} /> */}
         <IndexRoute />
-			 	<Route path="thrillers" component={Thrillers} />
+        <Route path="thrillers" component={Thrillers} />
         <Route path="seriesus" component={SeriesUs} />
         <Route path="mangas" component={Mangas} />
       </Route>

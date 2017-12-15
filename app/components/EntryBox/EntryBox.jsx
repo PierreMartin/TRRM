@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 const EntryBox = ({ placeholder, handleChangeMessage, handleSubmitMessage, value }) => (
   <div className={cx('entrybox')}>
-		<Divider as='h4' horizontal style={{ margin: '3em 0em', textTransform: 'uppercase' }}>Add a course here</Divider>
+		<Divider as="h4" horizontal style={{ margin: '3em 0em', textTransform: 'uppercase' }}>Add a course here</Divider>
     <input
       type="text"
       onChange={handleChangeMessage}

@@ -12,9 +12,9 @@ const LayoutPage = ({ title, link, meta, children }) => {
 };
 
 LayoutPage.propTypes = {
-  title: PropTypes.string,
-  link: PropTypes.array,
-  meta: PropTypes.array
+  title: PropTypes.string.isRequired,
+  link: PropTypes.array.isRequired,
+  meta: PropTypes.array.isRequired
 };
 
 export default LayoutPage;

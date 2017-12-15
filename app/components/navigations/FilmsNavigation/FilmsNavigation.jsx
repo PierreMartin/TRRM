@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu } from 'semantic-ui-react';
-import classNames from 'classnames/bind';
-import styles from '../../../css/main.scss';
+// import classNames from 'classnames/bind';
+// import styles from '../../../css/main.scss';
 
-const cx = classNames.bind(styles);
+// const cx = classNames.bind(styles);
 
 class NavigationMain extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			activeItem: 'thrillers'
@@ -25,9 +25,9 @@ class NavigationMain extends Component {
 
 		return (
 			<Menu fluid vertical tabular>
-				<Menu.Item as={Link} to="/films/thrillers" name='thrillers' active={activeItem === 'thrillers'} onClick={this.handleItemClick}>Thrillers</Menu.Item>
-				<Menu.Item as={Link} to="/films/seriesus" name='seriesus' active={activeItem === 'seriesus'} onClick={this.handleItemClick}>SeriesUs</Menu.Item>
-				<Menu.Item as={Link} to="/films/mangas" name='mangas' active={activeItem === 'mangas'} onClick={this.handleItemClick}>Mangas</Menu.Item>
+				<Menu.Item as={Link} to="/films/thrillers" name="thrillers" active={activeItem === 'thrillers'} onClick={this.handleItemClick}>Thrillers</Menu.Item>
+				<Menu.Item as={Link} to="/films/seriesus" name="seriesus" active={activeItem === 'seriesus'} onClick={this.handleItemClick}>SeriesUs</Menu.Item>
+				<Menu.Item as={Link} to="/films/mangas" name="mangas" active={activeItem === 'mangas'} onClick={this.handleItemClick}>Mangas</Menu.Item>
 			</Menu>
 
 			/*
@@ -40,7 +40,7 @@ class NavigationMain extends Component {
 			 </nav>
 			 */
 		);
-	};
+	}
 }
 
 export default NavigationMain;

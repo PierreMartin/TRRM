@@ -18,20 +18,20 @@ class Home extends Component {
 		this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
 	}
 
-  getMetaData() {
-    return {
-      title: 'Home | react stater',
-      meta: [{ name: 'description', content: 'react stater' }],
-      link: []
-    };
-  }
-
 	componentDidMount() {
 		// ...
 	}
 
 	componentDidUpdate() {
 		// ...
+	}
+
+	getMetaData() {
+		return {
+			title: 'Home | react stater',
+			meta: [{ name: 'description', content: 'react stater' }],
+			link: []
+		};
 	}
 
 	handleChangeMessage(event) {
@@ -50,15 +50,15 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.getMetaData()}>
-				<Segment inverted textAlign='center' style={{ minHeight: 400, padding: '1em 0em' }} vertical>
+				<Segment inverted textAlign="center" style={{ minHeight: 400, padding: '1em 0em' }} vertical>
 					<Container text>
-						<Header as='h1' content='Hello, world!' inverted className={cx('myClass')} style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '1em' }}/>
-						<Header as='h2' content='Do whatever you want when you want to.' inverted style={{ fontSize: '1.7em', fontWeight: 'normal' }}/>
-						<Button primary size='huge'>Get Started<Icon name='right arrow' /></Button>
+						<Header as="h1" content="Hello, world!" inverted className={cx('myClass')} style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '1em' }} />
+						<Header as="h2" content="Do whatever you want when you want to." inverted style={{ fontSize: '1.7em', fontWeight: 'normal' }} />
+						<Button primary size="huge">Get Started<Icon name="right arrow" /></Button>
 					</Container>
 				</Segment>
 
-				<Segment textAlign='center' vertical>
+				<Segment textAlign="center" vertical>
 					<Container text>
 						<EntryBox
 							placeholder="Write something here"
@@ -82,7 +82,7 @@ class Home extends Component {
 
 /*
  Home.propTypes = {
-	optionalArray: PropTypes.array,
+	optionalArray: PropTypes.array, || PropTypes.arrayOf()
 	optionalBool: PropTypes.bool,
 	optionalFunc: PropTypes.func,
 	optionalNumber: PropTypes.number,
@@ -94,7 +94,12 @@ class Home extends Component {
 
 
 Home.propTypes = {
-	courses: PropTypes.arrayOf.isRequired,
+	courses: PropTypes.arrayOf(PropTypes.shape({
+		description: PropTypes.string,
+		id: PropTypes.string,
+		price: PropTypes.number,
+		title: PropTypes.string
+	})).isRequired,
 	typingCreateCourseAction: PropTypes.func.isRequired,
 	typingCreateCourseState: PropTypes.string.isRequired,
 	createCourseAction: PropTypes.func.isRequired
