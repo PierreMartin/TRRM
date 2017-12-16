@@ -1,4 +1,4 @@
-## Template React + Redux + MongoDB + SRR
+## Template React + Redux + SRR
 
 - Bootstrapped with Create React App
 - React-router
@@ -10,8 +10,6 @@
 
 ### Install :
 `$ [sudo] npm i`
-
-`$ [sudo] mongod`
 
 `$ npm run dev | start | lint`
 
