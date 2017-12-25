@@ -34,8 +34,8 @@ export function api() {
 		}),
 		// Musics (example with deezer API) :
 		getMusics: query => deezerClient.request({
-				// method: 'GET',
-				url: '/search?q=' + query + '&output=jsonp'
+			// method: 'GET',
+			url: '/search?q=' + query + '&output=jsonp'
 		})
 	};
 }
