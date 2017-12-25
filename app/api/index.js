@@ -37,17 +37,13 @@ export const createCourseRequest = (data) => {
 		});
 };
 
-/********************************************** Third API ***********************************************/
-export const getFilmsRequest = (/*params, store*/) => {
-	return api().getFilms()
+/********************************************** Musics ***********************************************/
+export const fetchMusicsRequest = (query) => {
+	return api().getMusics(query)
 		.then((res) => {
-			if (res.status === 200) {
-				console.log(res.data);
-				// store.dispatch({/* ... */});
-			}
+			if (res.data) return Promise.resolve(res);
 		})
 		.catch((err) => {
-			console.error(err);
-			// store.dispatch({/* ... */});
+			return Promise.reject(err);
 		});
 };

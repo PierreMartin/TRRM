@@ -1,5 +1,5 @@
 import * as types from './../types';
-import { createCourseRequest } from './../api';
+import { createCourseRequest, fetchMusicsRequest } from './../api';
 
 
 /************************ Create course ***********************/
@@ -39,6 +39,25 @@ export function createCourseAction(title) {
 			})
 			.catch((err) => {
 				if (err.message) return dispatch(createCourseFailure({id, error: 'Something went wrong'}));
+			});
+	};
+}
+
+
+/************************ Third API (should be in other file's action) ***********************/
+// Action from a component because datas are fetched in a search input
+export function fetchMusicsAction(query) {
+	return (/*dispatch*/) => {
+		if (query.trim().length <= 0) return;
+
+		fetchMusicsRequest(query)
+			.then((res) => {
+			console.log(res.data);
+				// if (res.data) return dispatch(getMusicsSuccess(res.data));
+			})
+			.catch((err) => {
+			console.error(err.message);
+				// if (err.message) return dispatch(getMusicFailure({error: err.message, id: query}));
 			});
 	};
 }

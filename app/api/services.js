@@ -1,11 +1,12 @@
 import restApiClient from './../middlewares/restApiClient';
+import restApiClientCrossSite from './../middlewares/restApiClientCrossSite';
 
 export function api() {
-	const localhostUrl = 'http://localhost:3000';
-	const swapiUrl = 'https://swapi.co';
+	const localhostEndpoint = 'http://localhost:3000';
+	const deezerEndpoint = 'https://api.deezer.com';
 
-	const localClient = restApiClient().withConfig({ baseURL: localhostUrl });
-	const swapiClient = restApiClient().withConfig({ baseURL: swapiUrl });
+	const localClient = restApiClient().withConfig({ baseURL: localhostEndpoint });
+	const deezerClient = restApiClientCrossSite().withConfig({ baseURL: deezerEndpoint });
 
 	return {
 		// Courses :
@@ -31,11 +32,10 @@ export function api() {
 			url: '/api/course/' + id,
 			data
 		}),
-
-		// Films (example with swapi API) :
-		getFilms: () => swapiClient.request({
-			method: 'GET',
-			url: '/api/films/1/'
+		// Musics (example with deezer API) :
+		getMusics: query => deezerClient.request({
+				// method: 'GET',
+				url: '/search?q=' + query + '&output=jsonp'
 		})
 	};
 }
